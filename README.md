@@ -7,5 +7,5 @@ Boiler Plate with Node & Graph QL & mysql
 ## Install
 
 ```
-$ npm insatll 
+$ npm install 
 ```
