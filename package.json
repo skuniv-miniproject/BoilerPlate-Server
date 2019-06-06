@@ -1,0 +1,23 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "``` Boiler Plate with Node & Graph QL & mysql ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skuniv-miniproject/BoilerPlate-Server.git"
+  },
+  "keywords": [
+    "Mini",
+    "Project"
+  ],
+  "author": "M&K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skuniv-miniproject/BoilerPlate-Server/issues"
+  },
+  "homepage": "https://github.com/skuniv-miniproject/BoilerPlate-Server#readme"
+}
