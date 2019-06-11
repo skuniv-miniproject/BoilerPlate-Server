@@ -9,19 +9,23 @@ import {
   buildSchema
 } from "graphql";
 
-let schema = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: "test",
-    fields: {
-      hello: {
-        type: GraphQLString,
-        resolve() {
-          return "world";
-        }
-      }
-    }
-  })
-});
+import RandomDice from "./model";
+
+// import { getDiffieHellman } from "crypto";
+
+// let schema = new GraphQLSchema({
+//   query: new GraphQLObjectType({
+//     name: "test",
+//     fields: {
+//       hello: {
+//         type: GraphQLString,
+//         resolve() {
+//           return "world";
+//         }
+//       }
+//     }
+//   })
+// });
 
 const a = {
   a: "123",
@@ -30,11 +34,18 @@ const a = {
 };
 
 const testSchema = buildSchema(`
+type RandomDice {
+  numSide : Int!
+  rollOnce : Int!
+  roll(numRolls : Int!) : [Int]
+}
+
 type Query{
   quoteOfDay : String
   random : Float!
   rollThreeNumber : [Int]
   rollDice(numDice : Int! , numSide : Int ) : [Int]
+  getDie(numSides : Int) : RandomDice 
 }
 `);
 
@@ -55,6 +66,10 @@ const root = {
       output.push(1 * Math.floor(Math.random() * (numSide || 6)));
     }
     return output;
+  },
+
+  getDie: ({ numSides }) => {
+    return new RandomDice(numSides || 6);
   }
 };
 
