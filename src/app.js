@@ -33,6 +33,14 @@ const a = {
   asdf: 1
 };
 
+/* buildSchema 는 간단히 말해서 스키마 명세서 정의 즉 기존 rest API의 api 명세서와 같다고 보면된다.
+type Qeury 는 기존 api의 endpoint를 명세하는 부분이라고 생각하면 편할듯 싶다.
+Qeury 내부를 살펴보면 콜론 앞이 endpoint name 명시
+콜론 뒤쪽 부분은 return Type 을 명시하고 있다.
+Class 를 통해서 스키마의 행동을 정의한 경우 (약간 c 언어의 구조체와 비슷한 느낌을 준다.) 
+type 에 class명을 적고 class내부에 선언한 method의 함수명과 리턴타입을 명시한다.
+마지막엔 type Qeury 내부에서 Endpoint name 명시 및 리턴타입 자리에는 위에 선언한 type을 선언한다.
+*/
 const testSchema = buildSchema(`
 type RandomDice {
   rollOnce : Int!
