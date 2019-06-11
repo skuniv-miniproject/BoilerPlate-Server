@@ -17,4 +17,5 @@ class RandomDice {
   }
 }
 
+//export Class
 module.exports = RandomDice;
