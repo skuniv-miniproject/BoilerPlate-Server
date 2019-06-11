@@ -1,11 +1,11 @@
 class RandomDice {
   //생성자 생성
-  constructor(numSide) {
-    this.numSide = numSide;
+  constructor(numSides) {
+    this.numSides = numSides;
   }
 
   rollOnce() {
-    return 1 + Math.floor(Math.random() * this.numSide);
+    return 1 + Math.floor(Math.random() * this.numSides);
   }
 
   roll({ numRolls }) {

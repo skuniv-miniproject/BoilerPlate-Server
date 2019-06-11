@@ -35,7 +35,6 @@ const a = {
 
 const testSchema = buildSchema(`
 type RandomDice {
-  numSide : Int!
   rollOnce : Int!
   roll(numRolls : Int!) : [Int]
 }
