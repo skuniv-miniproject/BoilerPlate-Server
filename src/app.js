@@ -48,10 +48,10 @@ type Query{
 }
 `);
 
+const quoteOfDay = () => new Date().getDate();
+
 const root = {
-  quoteOfDay: () => {
-    return Math.random() < 0.5 ? "take is" : "Slave of day";
-  },
+  quoteOfDay: () => quoteOfDay(),
   random: () => {
     return Math.random();
   },
