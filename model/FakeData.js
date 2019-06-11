@@ -10,3 +10,5 @@ const Schema = new buildSchema(`
     type Query 
   
   `);
+
+module.exports = Schema;

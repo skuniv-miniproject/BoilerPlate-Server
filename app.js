@@ -23,6 +23,12 @@ let schema = new GraphQLSchema({
   })
 });
 
+const a = {
+  a: "123",
+  dafd: 233,
+  asdf: 1
+};
+
 const testSchema = buildSchema(`
 type Query{
   quoteOfDay : String
@@ -42,16 +48,19 @@ const root = {
   rollThreeNumber: () => {
     return [1, 2, 3].map(number => number + 2);
   },
-
   rollDice: ({ numDice, numSide }) => {
     let output = [];
+    console.log(numDice);
     for (let i = 0; i < numDice; i++) {
-      output.push(1 * Math.floor(Math.random * (numSide || 6)));
-      console.log(typeof i);
+      output.push(1 * Math.floor(Math.random() * (numSide || 6)));
     }
-    console.log(output);
     return output;
   }
+};
+
+const fun = () => {
+  const i = 1;
+  return i;
 };
 
 const app = express();
@@ -65,4 +74,6 @@ app.use(
   })
 );
 
-app.listen(4000, () => console.log("Server Start on port 4000 http://localhost/graphql"));
+app.listen(4000, () =>
+  console.log("Server Start on port 4000 http://localhost:4000/graphql")
+);
