@@ -59,7 +59,7 @@ type Query{
 const quoteOfDay = () => new Date().getDate();
 
 const root = {
-  quoteOfDay: () => quoteOfDay(),
+  quoteOfDay: quoteOfDay(),
   random: () => {
     return Math.random();
   },
